@@ -363,7 +363,7 @@ const EXPERIENCES = [
             </svg>
         </button>
 
-        <div class="w-full h-full flex items-center justify-center relative"
+        <div class="w-full h-full flex items-center justify-center relative md:items-start md:pt-24"
              ontouchstart="touchStart(event)"
              ontouchend="touchEnd(event)">
              
@@ -635,4 +635,5 @@ const EXPERIENCES = [
     
     window.closeExperienceModal = closeExperienceModal;
     window.addToCartFromModal = addToCartFromModal;
+    window.openExperienceModal = openExperienceModal; // <--- ¡ESTA LÍNEA ERA LA CLAVE!
 </script>
