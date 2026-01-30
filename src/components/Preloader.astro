@@ -1,0 +1,52 @@
+---
+// src/components/Preloader.astro
+const logoPath = '/images/logoLP.png'; 
+const sandImage = '/images/arena.webp';
+---
+
+<div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden bg-[#FFF3E1] transition-opacity duration-700">
+    
+    <div 
+        class="absolute inset-0 bg-repeat filter blur-xl opacity-40 mix-blend-multiply"
+        style={`background-image: url('${sandImage}'); background-size: 400px;`}
+    ></div>
+
+    <div class="relative z-10 flex flex-col items-center gap-6"> <img 
+            src={logoPath} 
+            alt="Cargando Love Picnic..." 
+            class="w-40 h-40 md:w-56 md:h-56 object-contain animate-pulse-slow drop-shadow-lg"
+        />
+
+        <span class="text-picnic-gold font-serif text-sm tracking-[0.3em] uppercase animate-pulse text-center ml-5">
+            Cargando...
+        </span>
+
+    </div>
+
+</div>
+
+<style>
+    @keyframes pulseSlow {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(0.97); } /* Ajusté un poco la animación para que no se achique tanto */
+    }
+
+    .animate-pulse-slow {
+        animation: pulseSlow 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+</style>
+
+<script>
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        
+        if (preloader) {
+            setTimeout(() => {
+                preloader.style.opacity = '0'; 
+                setTimeout(() => {
+                    preloader.style.display = 'none'; 
+                }, 700); 
+            }, 800); 
+        }
+    });
+</script>

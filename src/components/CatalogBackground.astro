@@ -1,0 +1,16 @@
+---
+// src/components/SkyBackground.astro
+const sandImage = '/images/arena.webp';
+---
+<div class="min-h-screen w-full relative overflow-hidden">
+  
+  <div 
+       class="fixed inset-0 -z-50 bg-repeat filter blur-lg"
+       style={`background-image: url('${sandImage}'); background-size: 500px;`} 
+  ></div>
+
+  <div class="relative z-10">
+    <slot />
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* BORRAMOS LA LÍNEA DE @IMPORT GOOGLE FONTS PORQUE YA ESTÁ EN EL LAYOUT */
+
+@theme {
+  /* --- PALETA MINIMALISTA DE LUJO --- */
+  
+  /* Azul muy profundo (casi negro) para elegancia máxima */
+  --color-picnic-navy: #050b14; 
+  
+  /* El color exacto de tu logo (Crema/Dorado suave) */
+  --color-picnic-gold: #fdf6d8; 
+  
+  /* Un gris muy suave para textos secundarios */
+  --color-picnic-text: #e2e8f0;
+
+  /* Tipografía: Solo usamos Montserrat para todo (limpieza total) */
+  --font-sans: "Montserrat", sans-serif;
+}
+
+/* Estilos base */
+body {
+    font-family: var(--font-sans);
+    @apply bg-picnic-navy text-picnic-text;
+    /* Suavizado de fuentes para que se vean delgadas y elegantes */
+    -webkit-font-smoothing: antialiased; 
+}

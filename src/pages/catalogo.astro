@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import CatalogHeader from '../components/CatalogHeader.astro';
+import LPStoreSection from '../components/LPStore.astro';
+import TeepeSection from '../components/TeepeSection.astro';
+import Catalogbackground from '../components/CatalogBackground.astro';
+import Footer from '../components/Footer.astro';
+// NUEVOS COMPONENTES
+import CartIcon from '../components/CartIcon.astro';
+---
+
+<Layout title="Catálogo | Love Picnic">
+  
+  <Navbar />
+  
+  <Catalogbackground>
+    
+    <CatalogHeader />
+    <TeepeSection />
+    <LPStoreSection />
+  
+
+    <!-- NUEVOS COMPONENTES DEL CARRITO -->
+    <CartIcon />
+    <div class="h-40"></div>
+    
+  </Catalogbackground>
+  <Footer />
+</Layout>

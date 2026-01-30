@@ -1,0 +1,91 @@
+---
+// src/components/Footer.astro
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="relative bg-[#0F1F38] pt-30 pb-15 px-6 overflow-hidden border-t border-white/10">
+
+    <div class="absolute inset-0 -z-50 h-full w-full">
+         <div 
+            class="absolute inset-0 bg-repeat filter blur-[3px] opacity-20 mix-blend-overlay"
+        ></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="text-center mb-12 max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-4xl font-serif text-white mb-4 leading-tight drop-shadow-lg">
+                ¡Gracias por elegirnos!
+            </h2>
+            <p class="text-picnic-gold/90 text-base md:text-xl font-light italic leading-relaxed">
+                "Nos encanta ser parte de tus momentos especiales.<br class="hidden md:block" />
+                Si tienes alguna duda, ¡no dudes en contactarnos!"
+            </p>
+        </div>
+
+        <div class="flex flex-col items-center mb-16">
+            <span class="text-[10px] font-bold tracking-[0.3em] text-white/40 uppercase mb-6 animate-pulse">
+                Nuestras Redes
+            </span>
+            
+            <div class="flex gap-6 md:gap-8">
+                <a href="https://www.instagram.com/lovepicnic_mid/" target="_blank" class="group relative flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-transparent border border-white/20 hover:border-picnic-gold hover:bg-picnic-gold hover:scale-110 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-[#0F1F38] transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+
+                <a href="https://www.tiktok.com/@lovepicnic_mid?lang=es-419" target="_blank" class="group relative flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-transparent border border-white/20 hover:border-picnic-gold hover:bg-picnic-gold hover:scale-110 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-[#0F1F38] transition-colors"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                </a>
+
+                <a href="https://www.facebook.com/lovepicnicmid?locale=es_LA" target="_blank" class="group relative flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-transparent border border-white/20 hover:border-picnic-gold hover:bg-picnic-gold hover:scale-110 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-[#0F1F38] transition-colors"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start text-center md:text-left border-t border-white/10 pt-10">
+            
+            <div class="flex flex-col items-center md:items-start">
+                <img src="/images/logoLP.png" alt="Love Picnic Logo" class="w-24 mb-4 drop-shadow-md hover:scale-105 transition-transform duration-500" />
+                
+                <p class="text-gray-400 text-xs leading-relaxed max-w-xs font-light ">
+                    <strong class="text-picnic-gold block mb-2 uppercase tracking-wider text-[10px] font-bold ">📍 Zona de Servicio</strong>
+                       Servicio en Mérida y playas cercanas como Sisal, Progreso, Chuburná y más. Pregunta si tienes dudas.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-serif text-base mb-6 relative inline-block">
+                    Contáctanos
+                    <span class="absolute -bottom-2 left-1/2 md:left-0 w-8 h-[1px] bg-picnic-gold transform -translate-x-1/2 md:translate-x-0"></span>
+                </h4>
+                
+                <a href="https://wa.me/529992326551" target="_blank" class="group flex items-center gap-3 border border-picnic-gold/30 px-6 py-2 rounded-full hover:bg-picnic-gold/10 transition-all duration-300 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-picnic-gold w-5 h-5 group-hover:scale-110 transition-transform"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a0.5 .5 0 0 0 1 1a5 5 0 0 0 5 5a0.5 .5 0 0 0 1-1V11a5 5 0 0 0-5-5h-1a0.5 .5 0 0 0-1 1"/></svg>
+                    <span class="text-white text-base font-light tracking-wide group-hover:text-picnic-gold transition-colors">999 232 6551</span>
+                </a>
+                
+                <p class="text-[10px] text-gray-500 tracking-wider uppercase mt-1">Atención personalizada</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                 <h4 class="text-white font-serif text-base mb-6 relative inline-block">
+                    Legal
+                    <span class="absolute -bottom-2 left-1/2 md:left-0 w-8 h-[1px] bg-picnic-gold transform -translate-x-1/2 md:translate-x-0"></span>
+                </h4>
+                 
+                 <a href="/privacidad" class="text-gray-400 hover:text-picnic-gold transition-colors text-xs mb-8 flex items-center gap-2 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:text-picnic-gold"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Aviso de Privacidad
+                 </a>
+
+                 <div class="text-gray-600 text-[10px] uppercase tracking-widest mt-auto font-medium">
+                    © {currentYear} Love Picnic.<br/>Todos los derechos reservados.
+                 </div>
+            </div>
+
+        </div>
+
+    </div>
+</footer>

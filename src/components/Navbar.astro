@@ -1,0 +1,244 @@
+---
+import Policies from "./Policies.astro"
+import CheckOutForm from "./CheckOutForm.astro"
+---
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent py-4">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center relative">
+    
+    <a href="/#inicio" class="block hover:opacity-80 transition-opacity z-50 relative">
+      <img src="/images/logoLP.png" alt="Love Picnic" class="h-10 md:h-16 w-auto object-contain drop-shadow-lg transition-all duration-300" id="nav-logo" />
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-[0.2em] uppercase text-picnic-gold">
+      
+      <a href="/#inicio" class="hover:text-white transition-colors relative group">
+        Inicio <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+      </a>
+      
+      <a href="/catalogo" class="hover:text-white transition-colors relative group">
+        Catálogo <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="/#pasos" class="hover:text-white transition-colors relative group whitespace-nowrap">
+        ¿Cómo funciona? <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="/#testimonios" class="hover:text-white transition-colors relative group">
+        Testimonios <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="/#nosotros" class="hover:text-white transition-colors relative group">
+        Nosotros <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+      </a>
+      
+      <button onclick="toggleCart()" id="cartBtnDesktop" class="flex uppercase items-center gap-2 border border-picnic-gold px-6 py-2 hover:bg-picnic-gold hover:text-picnic-navy transition-all duration-500 group relative ml-4">
+          <span>Mi reserva</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+          <span id="navCartCount" class="hidden absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-[#0F1F38]">0</span>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-5 md:hidden z-50 relative">
+      <button onclick="toggleCart()" class="relative text-picnic-gold p-1 active:scale-90 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+        </svg>
+        <span id="navCartCountMobile" class="hidden absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">0</span>
+      </button>
+      
+      <button id="mobileMenuBtn" class="text-picnic-gold active:scale-90 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="cartDropdown" class="absolute top-20 right-4 md:top-full md:right-12 w-[90vw] md:w-[24rem] bg-[#0F1F38] border border-picnic-gold/30 shadow-2xl transform origin-top-right transition-all duration-300 opacity-0 scale-95 invisible z-[60]">
+        <div class="absolute -top-2 right-16 md:right-8 w-4 h-4 bg-[#0F1F38] border-l border-t border-picnic-gold/30 rotate-45"></div>
+        <div class="p-5 border-b border-white/10 flex justify-between items-center">
+            <h2 class="text-white font-serif uppercase text-sm">Tu Reserva</h2>
+            <div class="flex items-center gap-4">
+                <button onclick="askClearCart()" id="clearAllBtn" class="text-[10px] text-red-400 uppercase tracking-wider hidden">Borrar todo</button>
+                <button onclick="toggleCart()" class="text-white/40 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+            </div>
+        </div>
+        <div id="cartItems" class="max-h-[50vh] overflow-y-auto p-5 space-y-4 custom-scrollbar bg-[#0F1F38]"></div>
+        <div class="p-5 border-t border-white/10 bg-[#0B1829]">
+            <div class="flex justify-between items-end mb-4">
+                <span class="text-white/60 text-xs uppercase">Total Estimado</span>
+                <span id="cartTotal" class="text-2xl text-picnic-gold font-medium">$0</span>
+            </div>
+            <button onclick="openPoliciesModal()" id="checkoutBtn" disabled class="w-full py-4 bg-picnic-gold text-picnic-navy font-bold text-xs uppercase tracking-widest disabled:opacity-50 hover:bg-white transition-colors">
+                Cotizar vía WhatsApp
+            </button>
+        </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="fixed inset-0 w-full h-[100dvh] bg-[#0F1F38] z-[100] flex flex-col items-center justify-start pt-32 gap-8 p-6 transition-all duration-500 opacity-0 pointer-events-none transform scale-[0.98] overflow-hidden">
+      <button onclick="closeMobileMenu()" class="absolute top-6 right-6 text-white/50 hover:text-picnic-gold p-2 z-10 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+      <div class="flex flex-col items-center space-y-4">
+          <img src="/images/logoLP.png" alt="Love Picnic" class="h-24 w-auto object-contain drop-shadow-xl" />
+      </div>
+      <div class="flex flex-col items-center space-y-4">
+          <h2 class="text-picnic-gold font-serif text-3xl uppercase tracking-[0.3em] drop-shadow-md text-center">Menú</h2>
+          <div class="w-12 h-[1px] bg-picnic-gold opacity-50"></div>
+      </div>
+      
+      <div class="flex flex-col items-center space-y-6 w-full max-h-[50vh] overflow-y-auto">
+          <a href="/#inicio" class="text-xl font-medium text-picnic-gold hover:text-white uppercase tracking-[0.2em] transition-all active:scale-95 text-center w-full" onclick="closeMobileMenu()">Inicio</a>
+          <a href="/catalogo" class="text-xl font-medium text-picnic-gold hover:text-white uppercase tracking-[0.2em] transition-all active:scale-95 text-center w-full" onclick="closeMobileMenu()">Catálogo</a>
+          <a href="/#pasos" class="text-xl font-medium text-picnic-gold hover:text-white uppercase tracking-[0.2em] transition-all active:scale-95 text-center w-full" onclick="closeMobileMenu()">¿Cómo funciona?</a>
+          <a href="/#testimonios" class="text-xl font-medium text-picnic-gold hover:text-white uppercase tracking-[0.2em] transition-all active:scale-95 text-center w-full" onclick="closeMobileMenu()">Testimonios</a>
+          <a href="/#nosotros" class="text-xl font-medium text-picnic-gold hover:text-white uppercase tracking-[0.2em] transition-all active:scale-95 text-center w-full" onclick="closeMobileMenu()">Nosotros</a>
+      </div>
+  </div>
+</nav>
+
+<Policies />
+<CheckOutForm />
+
+<div id="toast-container" class="fixed top-24 right-6 z-[100] flex flex-col gap-2 pointer-events-none"></div>
+<div id="confirmModal" class="fixed inset-0 z-[100] hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#0F1F38] border border-picnic-gold/20 rounded-lg p-6 max-w-sm w-full" id="confirmModalContent">
+        <h3 class="text-white font-serif text-lg mb-2">¿Vaciar reserva?</h3>
+        <div class="flex gap-3 mt-4">
+            <button onclick="closeConfirmModal()" class="flex-1 px-4 py-2 border border-white/10 text-white rounded hover:bg-white/5">Cancelar</button>
+            <button onclick="confirmClearCart()" class="flex-1 px-4 py-2 bg-red-500/20 text-red-400 border border-red-500/30 rounded hover:bg-red-500 hover:text-white transition-colors">Sí, vaciar</button>
+        </div>
+    </div>
+</div>
+
+<style>
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.4); border-radius: 10px; }
+  .cart-open { opacity: 1 !important; visibility: visible !important; transform: scale(1) !important; }
+  .menu-open { opacity: 1 !important; pointer-events: auto !important; transform: scale(1) !important; }
+</style>
+
+<script is:inline>
+  // ... (EL SCRIPT ES EXACTAMENTE EL MISMO QUE ME DISTE, NO CAMBIA NADA DE LA LÓGICA INTERNA) ...
+  const CART_KEY = 'lovePicnicCart';
+  const cartDropdown = document.getElementById('cartDropdown');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const confirmModal = document.getElementById('confirmModal');
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const nav = document.getElementById('main-nav');
+  const logo = document.getElementById('nav-logo');
+  let cartTimer = null;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('bg-[#0F1F38]/90', 'backdrop-blur-md', 'shadow-xl', 'py-2'); nav.classList.remove('py-4');
+      logo.classList.remove('md:h-16'); logo.classList.add('md:h-12');
+    } else {
+      nav.classList.remove('bg-[#0F1F38]/90', 'backdrop-blur-md', 'shadow-xl', 'py-2'); nav.classList.add('py-4');
+      logo.classList.remove('md:h-12'); logo.classList.add('md:h-16');
+    }
+  });
+
+  function openMobileMenu() { mobileMenu.classList.add('menu-open'); document.body.style.overflow = 'hidden'; }
+  function closeMobileMenu() { mobileMenu.classList.remove('menu-open'); document.body.style.overflow = ''; }
+  if(mobileBtn) mobileBtn.addEventListener('click', openMobileMenu);
+  window.closeMobileMenu = closeMobileMenu;
+
+  window.toggleCart = function() {
+    clearTimeout(cartTimer);
+    closeMobileMenu(); 
+    const isOpen = cartDropdown.classList.contains('cart-open');
+    if (isOpen) cartDropdown.classList.remove('cart-open');
+    else { updateCartUI(); cartDropdown.classList.add('cart-open'); }
+  };
+
+  document.addEventListener('click', (e) => {
+    if (cartDropdown && !cartDropdown.contains(e.target) && !e.target.closest('button[onclick="toggleCart()"]')) {
+        cartDropdown.classList.remove('cart-open');
+    }
+  });
+
+  function getCart() { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); }
+  function saveCart(cart) { localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartUI(); }
+
+  window.addToCart = function(item) {
+    const cart = getCart();
+    cart.push({ ...item, cartId: Date.now() + Math.floor(Math.random() * 1000) });
+    saveCart(cart);
+    showNotification(`¡${item.title} agregado!`);
+    clearTimeout(cartTimer);
+    if(!cartDropdown.classList.contains('cart-open')) cartDropdown.classList.add('cart-open');
+    cartTimer = setTimeout(() => cartDropdown.classList.remove('cart-open'), 4000);
+  };
+
+  window.removeFromCart = function(cartId) {
+    clearTimeout(cartTimer);
+    const cart = getCart().filter(item => item.cartId !== cartId);
+    saveCart(cart);
+  }
+
+  function updateCartUI() {
+    const cart = getCart();
+    const count = cart.length;
+    
+    [document.getElementById('navCartCount'), document.getElementById('navCartCountMobile')]
+    .forEach(el => { if(el) { el.textContent = count; el.classList.toggle('hidden', count === 0); } });
+
+    const clearAllBtn = document.getElementById('clearAllBtn');
+    if(clearAllBtn) count > 0 ? clearAllBtn.classList.remove('hidden') : clearAllBtn.classList.add('hidden');
+
+    const itemsContainer = document.getElementById('cartItems');
+    const totalEl = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    if (count === 0) {
+      itemsContainer.innerHTML = `<div class="py-8 text-center text-white/50 text-xs">Tu reserva está vacía</div>`;
+      checkoutBtn.disabled = true;
+      totalEl.textContent = "$0";
+    } else {
+      checkoutBtn.disabled = false;
+      itemsContainer.innerHTML = cart.map(item => `
+        <div class="flex justify-between items-start mb-3 border-b border-white/5 pb-2">
+            <div class="flex-1 pr-2">
+                <h4 class="text-white text-xs font-medium uppercase tracking-wide">${item.title}</h4>
+                <p class="text-picnic-gold text-xs font-bold">${item.price}</p>
+            </div>
+            <button onclick="event.stopPropagation(); removeFromCart(${item.cartId})" class="text-white/30 hover:text-red-400 p-2 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+            </button>
+        </div>`).join('');
+      
+      const total = cart.reduce((sum, item) => {
+          const priceString = item.price.toString().replace(/[^0-9]/g, '');
+          const price = parseInt(priceString);
+          return sum + (isNaN(price) ? 0 : price);
+      }, 0);
+      totalEl.textContent = `$${total}`;
+    }
+  }
+
+  function showNotification(message) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'bg-picnic-gold text-picnic-navy px-4 py-3 rounded shadow-xl flex items-center gap-3 transform transition-all duration-300 translate-x-full opacity-0 pointer-events-auto border-l-4 border-white font-medium z-[110]';
+    toast.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span class="text-sm">${message}</span>`;
+    container.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.remove('translate-x-full', 'opacity-0'));
+    setTimeout(() => { toast.classList.add('opacity-0', 'translate-x-full'); setTimeout(() => toast.remove(), 300); }, 3000);
+  }
+
+  window.askClearCart = () => confirmModal.classList.remove('hidden');
+  window.closeConfirmModal = () => confirmModal.classList.add('hidden');
+  window.confirmClearCart = () => { saveCart([]); closeConfirmModal(); };
+  
+  document.addEventListener('DOMContentLoaded', updateCartUI);
+</script>

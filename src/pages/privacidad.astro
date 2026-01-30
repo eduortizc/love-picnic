@@ -1,0 +1,107 @@
+---
+// src/pages/privacidad.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const sandImage = '/images/arena.webp';
+const lastUpdate = "27 de Enero de 2026";
+---
+
+<Layout title="Aviso de Privacidad | Love Picnic">
+    
+    <Navbar />
+
+    <main class="relative bg-[#0F1F38] min-h-screen pt-32 px-6 overflow-hidden">
+
+        <div class="absolute inset-0 -z-50 h-full w-full fixed">
+            <div 
+                class="absolute inset-0 bg-repeat filter blur-[3px] opacity-20 mix-blend-overlay"
+                style={`background-image: url('${sandImage}'); background-size: 500px;`}
+            ></div>
+            <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-[#0F1F38] to-transparent"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            
+            <div class="text-center mb-16 animate-fade-in-up">
+                <span class="text-picnic-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Legal</span>
+                <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 drop-shadow-lg">Aviso de Privacidad</h1>
+                <div class="w-24 h-[1px] bg-picnic-gold mx-auto mb-6"></div>
+                <p class="text-white/60 text-sm font-light italic">Última actualización: {lastUpdate}</p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl animate-fade-in-up delay-100 text-gray-300 font-light leading-relaxed text-sm md:text-base text-justify">
+                
+                <p class="mb-8">
+                    En cumplimiento con la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</strong>, <strong class="text-picnic-gold">Love Picnic</strong> (en adelante "el Responsable"), con domicilio de operaciones en Mérida, Yucatán, pone a su disposición el presente Aviso de Privacidad.
+                </p>
+
+                <div class="mb-10">
+                    <h3 class="text-white font-serif text-xl mb-4 border-l-2 border-picnic-gold pl-4">1. Datos Personales que Recabamos</h3>
+                    <p class="mb-4">Para la prestación de nuestros servicios de organización de eventos, picnics y experiencias, podemos recabar los siguientes datos personales:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-white/80 marker:text-picnic-gold">
+                        <li>Nombre completo.</li>
+                        <li>Teléfono de contacto (WhatsApp).</li>
+                        <li>Dirección de correo electrónico.</li>
+                        <li>Domicilio o ubicación donde se llevará a cabo el evento.</li>
+                        <li>Fotografías y videos de los eventos realizados (con fines promocionales, previo consentimiento).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-white font-serif text-xl mb-4 border-l-2 border-picnic-gold pl-4">2. Finalidad del Uso de Datos</h3>
+                    <p class="mb-4">Sus datos personales serán utilizados para las siguientes finalidades necesarias para el servicio que solicita:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-white/80 marker:text-picnic-gold">
+                        <li>Confirmar y coordinar reservaciones.</li>
+                        <li>Proveer los servicios y productos contratados (montaje de Teepees, Picnics, Cine, etc.).</li>
+                        <li>Facturación y cobro.</li>
+                        <li>Comunicación sobre cambios o seguimientos del servicio.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-white font-serif text-xl mb-4 border-l-2 border-picnic-gold pl-4">3. Uso de Imágenes</h3>
+                    <p>
+                        Al contratar nuestros servicios, usted reconoce que <strong class="text-white">Love Picnic</strong> podrá capturar fotografías del montaje y la decoración. Estas imágenes podrán ser utilizadas en nuestras redes sociales y sitio web con fines demostrativos de nuestro trabajo. Si usted prefiere que no se publiquen fotografías donde aparezcan personas, favor de notificarlo al momento de la reserva.
+                    </p>
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-white font-serif text-xl mb-4 border-l-2 border-picnic-gold pl-4">4. Derechos ARCO</h3>
+                    <p class="mb-4">
+                        Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación); que la eliminemos de nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada adecuadamente (Cancelación); así como oponerse al uso de sus datos personales para fines específicos (Oposición).
+                    </p>
+                    <p>
+                        Para el ejercicio de cualquiera de los derechos ARCO, usted deberá presentar la solicitud respectiva a través de nuestro número de contacto:
+                    </p>
+                    <div class="mt-4p-4 bg-white/5 rounded-lg border border-white/10 text-center">
+                        <a href="https://wa.me/529992326551" target="_blank" class="text-picnic-gold hover:text-white transition-colors font-bold tracking-widest uppercase text-sm">
+                            WhatsApp: 999 232 6551
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-serif text-xl mb-4 border-l-2 border-picnic-gold pl-4">5. Cambios al Aviso de Privacidad</h3>
+                    <p>
+                        El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de privacidad; de cambios en nuestro modelo de negocio, o por otras causas. Nos comprometemos a mantenerlo informado sobre los cambios que pueda sufrir el presente aviso de privacidad a través de este sitio web.
+                    </p>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="/" class="inline-block py-3 px-8 text-center bg-transparent border border-white/30 text-white hover:bg-white hover:text-[#0F1F38] text-xs font-bold uppercase tracking-widest rounded-sm transition-all duration-300 hover:shadow-lg">
+                    ← Volver al Inicio
+                </a>
+            </div>
+
+            <div class="h-40 md:h-64 w-full"></div>
+
+        </div>
+
+    </main>
+
+    <Footer />
+</Layout>
