@@ -8,6 +8,7 @@ const EXPERIENCES = [
     title: "Teepee Clásica",
     price: "$2,100",
     category: "Teepee",
+    discount: true, // <--- 20% OFF AGREGADO
     image: "/images/catalog/teepees/clasica/clasica.webp",
     gallery: ["/images/catalog/teepees/clasica/clasica.webp", "/images/catalog/teepees/clasica/clasica1.webp", "/images/catalog/teepees/clasica/clasica2.webp", "/images/catalog/teepees/clasica/clasica3.webp"],
     description: "El set perfecto para una velada inolvidable al aire libre.",
@@ -57,6 +58,7 @@ const EXPERIENCES = [
     title: "Teepee VIP",
     price: "$2,200",
     category: "Teepee",
+    discount: true, // <--- 20% OFF AGREGADO
     image: "/images/catalog/teepees/vip/vip.webp",
     gallery: ["/images/catalog/teepees/vip/vip.webp", "/images/catalog/teepees/vip/vip1.webp", "/images/catalog/teepees/vip/vip2.webp", "/images/catalog/teepees/vip/vip3.webp"],
     description: "Experiencia exclusiva con estructura VIP.",
@@ -155,6 +157,7 @@ const EXPERIENCES = [
     title: "Cinema Night",
     price: "$2,200",
     category: "Cine",
+    discount: true, // <--- 20% OFF AGREGADO
     image: "/images/catalog/cinema/cinema.webp", 
     gallery: ["/images/catalog/cinema/cinema.webp", "/images/catalog/cinema/cinema1.webp", "/images/catalog/cinema/cinema2.webp", "/images/catalog/cinema/cinema3.webp"],
     description: "Disfruta de una película al aire libre o en casa con pantalla gigante.",
@@ -188,6 +191,16 @@ const EXPERIENCES = [
                         onerror="this.src='https://images.unsplash.com/photo-1560035276-146d97a5b3f2?auto=format&fit=crop&w=800'" 
                         loading="lazy"
                     />
+
+                    {item.discount && (
+                        <div class="absolute top-4 right-4 z-30 bg-red-600 text-white text-xs font-extrabold px-3 py-1.5 rounded-sm shadow-xl transform rotate-3 border border-white/20 flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
+                                <path fill-rule="evenodd" d="M4.5 2A2.5 2.5 0 002 4.5v2.879a2.5 2.5 0 00.732 1.767l8.122 8.121a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536L9.146 2.732A2.5 2.5 0 007.38 2H4.5zM5 5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                            </svg>
+                            20% OFF
+                        </div>
+                    )}
+
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0F1F38] via-[#0F1F38]/60 to-transparent opacity-90 md:opacity-80 transition-opacity group-hover:opacity-95"></div>
 
                     <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col justify-end h-full">
