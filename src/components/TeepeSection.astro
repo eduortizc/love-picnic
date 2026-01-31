@@ -277,38 +277,46 @@ const EXPERIENCES = [
             ))}
         </div>
     </div>
-
-    <div id="experienceModal" class="fixed inset-0 z-[60] hidden overflow-y-auto">
-        <div class="fixed inset-0 bg-black/60 md:bg-black/50 backdrop-blur-sm transition-opacity" 
+    <div id="experienceModal" class="fixed inset-0 z-[99999] hidden flex items-start justify-center px-4 pt-25 md:pt-29">
+        
+        <div class="absolute inset-0 bg-black/60 md:bg-black/50 backdrop-blur-sm transition-opacity" 
              onclick="closeExperienceModal()"
              id="modalBackdrop"></div>
         
-        <div class="relative min-h-screen flex items-start md:items-center justify-center p-4 pt-15 md:pt-15 md:p-6 pointer-events-none">
-            <div class="bg-[#0F1F38]/80 md:bg-[#0F1F38]/60 backdrop-blur-xl border border-white/20 w-full max-w-5xl my-4 md:my-8 overflow-hidden rounded-2xl shadow-2xl pointer-events-auto flex flex-col md:flex-row relative animate-fade-in-up"
-                 onclick="event.stopPropagation()">
-                
-                <button onclick="closeExperienceModal()" 
-                        class="absolute top-4 right-4 z-50 p-2 bg-black/40 hover:bg-picnic-gold rounded-full text-white hover:text-picnic-navy transition-colors backdrop-blur-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+        <div class="relative bg-[#0F1F38]/80 md:bg-[#0F1F38]/60 backdrop-blur-xl border border-white/20 w-full max-w-5xl h-[80vh] md:h-auto md:max-h-[85vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up"
+             onclick="event.stopPropagation()">
+            
+            <button onclick="closeExperienceModal()" 
+                    class="absolute top-4 right-4 z-50 p-2 bg-black/40 hover:bg-picnic-gold rounded-full text-white hover:text-picnic-navy transition-colors backdrop-blur-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
-                <div class="w-full md:w-5/12 bg-black/20 p-4 md:p-6 flex flex-col">
-                    <div class="flex-1 h-56 md:h-64 overflow-hidden rounded-lg mb-4 relative shadow-inner group bg-black/40">
+            <div class="flex-1 overflow-y-auto custom-scrollbar flex flex-col md:flex-row">
+                
+                <div class="w-full md:w-5/12 bg-black/20 p-4 md:p-6 flex flex-col shrink-0">
+                    <div class="flex-1 min-h-[250px] md:h-64 overflow-hidden rounded-lg mb-4 relative shadow-inner group bg-black/40">
                         <img id="modalMainImage" src="" alt="" 
                              class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in hover:opacity-90" 
                              onclick="openLightbox()" />
                         
-                        <div class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm pointer-events-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline mr-1">
+                        <div class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm pointer-events-none flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
                             </svg>
                             Ver completa
                         </div>
+
+                        <button onclick="event.stopPropagation(); changeModalImage(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-picnic-gold/80 text-white hover:text-picnic-navy p-2 rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                        </button>
+                        <button onclick="event.stopPropagation(); changeModalImage(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-picnic-gold/80 text-white hover:text-picnic-navy p-2 rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                        </button>
                     </div>
                     
-                    <div class="flex gap-2 overflow-x-auto pb-2 custom-scrollbar snap-x" id="modalThumbnails"></div>
+                    <div class="flex gap-2 overflow-x-auto pb-2 custom-scrollbar snap-x shrink-0" id="modalThumbnails"></div>
                 </div>
 
                 <div class="w-full md:w-7/12 p-6 md:p-8 flex flex-col text-left">
@@ -323,13 +331,13 @@ const EXPERIENCES = [
                         <div id="modalTierOptions" class="flex flex-wrap gap-2"></div>
                     </div>
 
-                    <div class="overflow-y-auto max-h-[30vh] md:max-h-[40vh] custom-scrollbar pr-2">
+                    <div class="mb-6">
                         <div class="bg-black/20 p-5 rounded-lg mb-6 border border-white/5">
                             <h4 class="text-xs text-white uppercase tracking-widest font-bold mb-3 border-b border-white/10 pb-2">¿Qué incluye?</h4>
                             <ul id="modalIncludes" class="space-y-2 text-gray-200"></ul>
                         </div>
                         
-                        <div id="modalExtrasContainer" class="mb-6 hidden">
+                        <div id="modalExtrasContainer" class="hidden">
                             <p class="text-[10px] text-gray-300 uppercase tracking-widest mb-1">Extras Disponibles:</p>
                             <p id="modalExtras" class="text-xs text-gray-200"></p>
                         </div>
@@ -354,7 +362,7 @@ const EXPERIENCES = [
     </div>
 
     <div id="lightboxModal" 
-         class="fixed inset-0 z-[100] bg-gray-900/90 backdrop-blur-xl hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300" 
+         class="fixed inset-0 z-[999999] bg-gray-900/90 backdrop-blur-xl hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300" 
          onclick="closeLightbox()">
         
         <button class="absolute top-4 right-4 text-white hover:text-picnic-gold hover:bg-white/10 rounded-full z-50 p-2 transition-all" onclick="closeLightbox()">
@@ -384,6 +392,8 @@ const EXPERIENCES = [
             <span id="lightboxCounter">1 / 1</span>
         </div>
     </div>
+
+  
 </section>
 
 <script define:vars={{ EXPERIENCES }}>
@@ -398,21 +408,37 @@ const EXPERIENCES = [
     let isLightboxOpen = false;
 
     // --- LOGICA DE SWIPE PARA CELULAR ---
-    let touchStartX = 0;
+let touchStartX = 0;
     let touchEndX = 0;
+    let touchStartY = 0; // Nuevo: Para detectar altura
+    let touchEndY = 0;
 
     window.touchStart = function(e) {
         touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY; // Guardamos donde empieza el dedo
     }
 
     window.touchEnd = function(e) {
         touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;   // Guardamos donde termina
         handleSwipe();
     }
 
     function handleSwipe() {
-        if (touchEndX < touchStartX - 40) window.changeModalImage(1);
-        if (touchEndX > touchStartX + 40) window.changeModalImage(-1);
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        // Si el movimiento vertical fue mayor que el horizontal...
+        if (Math.abs(diffY) > Math.abs(diffX)) {
+            // Y si deslizó de ARRIBA hacia ABAJO (negativo) más de 50px
+            if (diffY < -50) {
+                window.closeLightbox(); // <--- ¡AQUÍ CERRAMOS EL MODAL!
+            }
+        } else {
+            // Si fue horizontal, cambiamos de foto como antes
+            if (diffX > 40) window.changeModalImage(1);
+            if (diffX < -40) window.changeModalImage(-1);
+        }
     }
     // ------------------------------------
     

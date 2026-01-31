@@ -140,6 +140,7 @@
 </style>
 
 <script is:inline>
+{ // <--- AQUÍ EMPIEZA EL ÁMBITO LOCAL PARA EVITAR EL ERROR
     const formatDate = (dateStr) => {
         if (!dateStr) return '';
         const [year, month, day] = dateStr.split('-');
@@ -253,4 +254,5 @@
             alert("Error al procesar. Intenta de nuevo.");
         }
     }
+} // <--- AQUÍ CIERRA EL ÁMBITO LOCAL
 </script>
