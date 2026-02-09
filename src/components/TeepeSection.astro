@@ -8,7 +8,7 @@ const EXPERIENCES = [
     title: "Teepee Clásica",
     price: "$2,100",
     category: "Teepee",
-    discount: true,
+    discount: false,
     image: "/images/catalog/teepees/clasica/clasica.webp",
     gallery: ["/images/catalog/teepees/clasica/clasica.webp", "/images/catalog/teepees/clasica/clasica1.webp", "/images/catalog/teepees/clasica/clasica2.webp", "/images/catalog/teepees/clasica/clasica3.webp"],
     description: "El set perfecto para una velada inolvidable al aire libre.",
@@ -58,7 +58,7 @@ const EXPERIENCES = [
     title: "Teepee VIP",
     price: "$2,200",
     category: "Teepee",
-    discount: true,
+    discount: false,
     image: "/images/catalog/teepees/vip/vip.webp",
     gallery: ["/images/catalog/teepees/vip/vip.webp", "/images/catalog/teepees/vip/vip1.webp", "/images/catalog/teepees/vip/vip2.webp", "/images/catalog/teepees/vip/vip3.webp"],
     description: "Experiencia exclusiva con estructura VIP.",
@@ -157,7 +157,7 @@ const EXPERIENCES = [
     title: "Cinema Night",
     price: "$2,200",
     category: "Cine",
-    discount: true,
+    discount: false,
     image: "/images/catalog/cinema/cinema.webp", 
     gallery: ["/images/catalog/cinema/cinema.webp", "/images/catalog/cinema/cinema1.webp", "/images/catalog/cinema/cinema2.webp", "/images/catalog/cinema/cinema3.webp"],
     description: "Disfruta de una película al aire libre o en casa con pantalla gigante.",
@@ -277,7 +277,7 @@ const EXPERIENCES = [
             ))}
         </div>
     </div>
-    <div id="experienceModal" class="fixed inset-0 z-[99999] hidden flex items-start justify-center px-4 pt-22  md:pt-29">
+    <div id="experienceModal" class="fixed inset-0 z-[99999] hidden flex items-start justify-center px-4 pt-22  md:pt-25">
         
         <div class="absolute inset-0 bg-black/60 md:bg-black/50 backdrop-blur-sm transition-opacity" 
              onclick="closeExperienceModal()"
