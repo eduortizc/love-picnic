@@ -2,260 +2,360 @@
 // src/components/TeepeSection.astro
 
 const EXPERIENCES = [
-  // --- TEEPEES (5) ---
-  {
-    id: 1,
-    title: "Teepee Clásica",
-    price: "$2,100",
-    category: "Teepee",
-    discount: false,
-    image: "/images/catalog/teepees/clasica/clasica.webp",
-    gallery: ["/images/catalog/teepees/clasica/clasica.webp", "/images/catalog/teepees/clasica/clasica1.webp", "/images/catalog/teepees/clasica/clasica2.webp", "/images/catalog/teepees/clasica/clasica3.webp"],
-    description: "El set perfecto para una velada inolvidable al aire libre.",
-    includes: [
-      "Teepee con luces",
-      "Edredón y cojines",
-      "Pizarra con frase personalizada",
-      "8 fotos impresas",
-      "Huacalito, mesita, flores, velas y decoraciones"
-    ]
-  },
-  {
-    id: 2,
-    title: "Teepee Love",
-    price: "$2,500",
-    category: "Teepee",
-    image: "/images/catalog/teepees/love/love.webp",
-    gallery: ["/images/catalog/teepees/love/love.webp", "/images/catalog/teepees/love/love1.webp", "/images/catalog/teepees/love/love2.webp", "/images/catalog/teepees/love/love3.webp"],
-    description: "Un toque extra de romance con snacks y detalles.",
-    includes: [
-      "Todo lo de Teepee Clásica",
-      "8 fotos impresas",
-      "Mesita y canasta con snacks",
-      "Tablita de quesos",
-      "Flores, velas y decoraciones"
-    ]
-  },
-  {
-    id: 3,
-    title: "Teepee Deluxe",
-    price: "$2,950",
-    category: "Teepee",
-    image: "/images/catalog/teepees/deluxe/deluxe.webp",
-    gallery: ["/images/catalog/teepees/deluxe/deluxe.webp", "/images/catalog/teepees/deluxe/deluxe1.webp", "/images/catalog/teepees/deluxe/deluxe2.webp", "/images/catalog/teepees/deluxe/deluxe3.webp"],
-    description: "La experiencia completa con cena incluida.",
-    includes: [
-      "Todo lo de Teepee Clásica",
-      "10 fotos impresas",
-      "Mesa para cena",
-      "Cena para dos y vino",
-      "Vajilla y copas elegantes",
-      "Flores, velas y decoraciones especiales"
-    ]
-  },
-  {
-    id: 4,
-    title: "Teepee VIP",
-    price: "$2,200",
-    category: "Teepee",
-    discount: false,
-    image: "/images/catalog/teepees/vip/vip.webp",
-    gallery: ["/images/catalog/teepees/vip/vip.webp", "/images/catalog/teepees/vip/vip1.webp", "/images/catalog/teepees/vip/vip2.webp", "/images/catalog/teepees/vip/vip3.webp"],
-    description: "Experiencia exclusiva con estructura VIP.",
-    includes: [
-      "Teepee VIP con luces / edredón y cojines",
-      "Pizarra con frase que desees",
-      "Mesita tipo huacal",
-      "Flores, velas y decoraciones"
-    ]
-  },
-  {
-    id: 5,
-    title: "Teepee Gold",
-    price: "$3,250",
-    category: "Teepee",
-    image: "/images/catalog/teepees/gold/gold.webp",
-    gallery: ["/images/catalog/teepees/gold/gold.webp", "/images/catalog/teepees/gold/gold1.webp", "/images/catalog/teepees/gold/gold2.webp", "/images/catalog/teepees/gold/gold3.webp"],
-    description: "La joya de la corona. Decoración elegante y cena completa.",
-    includes: [
-      "Teepee VIP Gold con luces/ edredón y cojines",
-      "Pizarra con la frase que desees",
-      "Mesa J para cena y huacalito",
-      "Cena para dos y vino",
-      "Vajilla y copas",
-      "Flores naturales, velas y decoraciones especiales"
-    ]
-  },
+    // --- TEEPEES (5) ---
+    {
+        id: 1,
+        title: "Teepee Clásica",
+        price: "$2,100",
+        category: "Teepee",
+        discount: false,
+        image: "/images/catalog/teepees/clasica/clasica.webp",
+        gallery: [
+            "/images/catalog/teepees/clasica/clasica.webp",
+            "/images/catalog/teepees/clasica/clasica1.webp",
+            "/images/catalog/teepees/clasica/clasica2.webp",
+            "/images/catalog/teepees/clasica/clasica3.webp",
+        ],
+        description:
+            "El set perfecto para una velada inolvidable al aire libre.",
+        includes: [
+            "Teepee con luces",
+            "Edredón y cojines",
+            "Pizarra con frase personalizada",
+            "8 fotos impresas",
+            "Huacalito, mesita, flores, velas y decoraciones",
+        ],
+    },
+    {
+        id: 2,
+        title: "Teepee Love",
+        price: "$2,500",
+        category: "Teepee",
+        image: "/images/catalog/teepees/love/love.webp",
+        gallery: [
+            "/images/catalog/teepees/love/love.webp",
+            "/images/catalog/teepees/love/love1.webp",
+            "/images/catalog/teepees/love/love2.webp",
+            "/images/catalog/teepees/love/love3.webp",
+        ],
+        description: "Un toque extra de romance con snacks y detalles.",
+        includes: [
+            "Todo lo de Teepee Clásica",
+            "8 fotos impresas",
+            "Mesita y canasta con snacks",
+            "Tablita de quesos",
+            "Flores, velas y decoraciones",
+        ],
+    },
+    {
+        id: 3,
+        title: "Teepee Deluxe",
+        price: "$2,950",
+        category: "Teepee",
+        image: "/images/catalog/teepees/deluxe/deluxe.webp",
+        gallery: [
+            "/images/catalog/teepees/deluxe/deluxe.webp",
+            "/images/catalog/teepees/deluxe/deluxe1.webp",
+            "/images/catalog/teepees/deluxe/deluxe2.webp",
+            "/images/catalog/teepees/deluxe/deluxe3.webp",
+        ],
+        description: "La experiencia completa con cena incluida.",
+        includes: [
+            "Todo lo de Teepee Clásica",
+            "10 fotos impresas",
+            "Mesa para cena",
+            "Cena para dos y vino",
+            "Vajilla y copas elegantes",
+            "Flores, velas y decoraciones especiales",
+        ],
+    },
+    {
+        id: 4,
+        title: "Teepee VIP",
+        price: "$2,200",
+        category: "Teepee",
+        discount: false,
+        image: "/images/catalog/teepees/vip/vip.webp",
+        gallery: [
+            "/images/catalog/teepees/vip/vip.webp",
+            "/images/catalog/teepees/vip/vip1.webp",
+            "/images/catalog/teepees/vip/vip2.webp",
+            "/images/catalog/teepees/vip/vip3.webp",
+        ],
+        description: "Experiencia exclusiva con estructura VIP.",
+        includes: [
+            "Teepee VIP con luces / edredón y cojines",
+            "Pizarra con frase que desees",
+            "Mesita tipo huacal",
+            "Flores, velas y decoraciones",
+        ],
+    },
+    {
+        id: 5,
+        title: "Teepee Gold",
+        price: "$3,250",
+        category: "Teepee",
+        image: "/images/catalog/teepees/gold/gold.webp",
+        gallery: [
+            "/images/catalog/teepees/gold/gold.webp",
+            "/images/catalog/teepees/gold/gold1.webp",
+            "/images/catalog/teepees/gold/gold2.webp",
+            "/images/catalog/teepees/gold/gold3.webp",
+        ],
+        description:
+            "La joya de la corona. Decoración elegante y cena completa.",
+        includes: [
+            "Teepee VIP Gold con luces/ edredón y cojines",
+            "Pizarra con la frase que desees",
+            "Mesa J para cena y huacalito",
+            "Cena para dos y vino",
+            "Vajilla y copas",
+            "Flores naturales, velas y decoraciones especiales",
+        ],
+    },
 
-  // --- PICNICS (3) ---
-  {
-    id: 6,
-    title: "Sweet Picnic",
-    price: "$1,950",
-    category: "Picnic",
-    image: "/images/catalog/picnics/sweet/sweet.webp", 
-    gallery: ["/images/catalog/picnics/sweet/sweet.webp", "/images/catalog/picnics/sweet/sweet1.webp", "/images/catalog/picnics/sweet/sweet2.webp", "/images/catalog/picnics/sweet/sweet3.webp", "/images/catalog/picnics/sweet/sweet4.webp", "/images/catalog/picnics/sweet/sweet5.webp", "/images/catalog/picnics/sweet/sweet6.webp", "/images/catalog/picnics/sweet/sweet7.webp"],
-    description: "Ideal para eventos en la playa de día o noche. Romántico y acogedor.",
-    includes: [
-      "Picnic table (mesa y estructura madera)",
-      "Luces, edredón y cojines",
-      "Vajilla y copas",
-      "Velas y flores naturales",
-      "Decoraciones completas"
-    ],
-    extras: "Globos (+$350), Fotos (+$50), Cena c/vino (+$800)"
-  },
-  {
-    id: 7,
-    title: "Picnic Party",
-    price: "$1,950",
-    category: "Picnic",
-    image: "/images/catalog/picnics/party/party.webp",
-    gallery: ["/images/catalog/picnics/party/party.webp", "/images/catalog/picnics/party/party1.webp", "/images/catalog/picnics/party/party2.webp", "/images/catalog/picnics/party/party3.webp", "/images/catalog/picnics/party/party4.webp", "/images/catalog/picnics/party/party5.webp", "/images/catalog/picnics/party/party6.webp", "/images/catalog/picnics/party/party7.webp"],
-    description: "Perfecto para fiestas y celebraciones. Ambiente encantador y temático.",
-    includes: [
-      "Mesita de picnic y mantita",
-      "Almohadas decorativas",
-      "Flores naturales y velas",
-      "Vajilla con copas",
-      "Decoración temática"
-    ],
-    tiers: [
-        { label: "2-4 Personas", price: "$1,950" },
-        { label: "5-8 Personas", price: "$2,749" },
-        { label: "9-12 Personas", price: "$4,000" },
-        { label: "13-16 Personas", price: "$4,759" },
-         {label: "17-20 Personas", price: "$5,450" }
-    ],
-  },
-  {
-    id: 8,
-    title: "Picnic Kids",
-    price: "$1,850",
-    category: "Picnic",
-    image: "/images/catalog/picnics/kids/kids.webp", 
-    gallery: ["/images/catalog/picnics/kids/kids.webp", "/images/catalog/picnics/kids/kids1.webp", "/images/catalog/picnics/kids/kids2.webp", "/images/catalog/picnics/kids/kids3.webp"],
-    description: "Personalizado con temática elegida. Ideal para los más pequeños.",
-    includes: [
-      "Mesita de picnic y mantita",
-      "Almohadas decorativas",
-      "Decoración mesa y flores naturales",
-      "Letreritos de reservado",
-      "Vajilla con vasitos"
-    ],
-    tiers: [
-        { label: "2-4 Personas", price: "$1,850" },
-        { label: "5-8 Personas", price: "$2,599" },
-        { label: "9-12 Personas", price: "$3,850" },
-        { label: "13-16 Personas", price: "$4,759" },
-        { label: "17-20 Personas", price: "$5,650" }
-    ],
-    extras: "Extra: Teepee Dion globos ($850)."
-  },
-  {
-    id: 9,
-    title: "Cinema Night",
-    price: "$2,200",
-    category: "Cine",
-    discount: false,
-    image: "/images/catalog/cinema/cinema.webp", 
-    gallery: ["/images/catalog/cinema/cinema.webp", "/images/catalog/cinema/cinema1.webp", "/images/catalog/cinema/cinema2.webp", "/images/catalog/cinema/cinema3.webp"],
-    description: "Disfruta de una película al aire libre o en casa con pantalla gigante.",
-    includes: [
-      "Pantalla gigante inflable",
-      "Sillón inflable (para dos)",
-      "Proyector",
-      "Mesita, luces y decoraciones",
-      "Ambiente de cine privado"
-    ],
-    extras: "Se le puede agregar Teepee VIP con luces (+$900)."
-  }
+    // --- PICNICS (3) ---
+    {
+        id: 6,
+        title: "Sweet Picnic",
+        price: "$1,950",
+        category: "Picnic",
+        image: "/images/catalog/picnics/sweet/sweet.webp",
+        gallery: [
+            "/images/catalog/picnics/sweet/sweet.webp",
+            "/images/catalog/picnics/sweet/sweet1.webp",
+            "/images/catalog/picnics/sweet/sweet2.webp",
+            "/images/catalog/picnics/sweet/sweet3.webp",
+            "/images/catalog/picnics/sweet/sweet4.webp",
+            "/images/catalog/picnics/sweet/sweet5.webp",
+            "/images/catalog/picnics/sweet/sweet6.webp",
+            "/images/catalog/picnics/sweet/sweet7.webp",
+        ],
+        description:
+            "Ideal para eventos en la playa de día o noche. Romántico y acogedor.",
+        includes: [
+            "Picnic table (mesa y estructura madera)",
+            "Luces, edredón y cojines",
+            "Vajilla y copas",
+            "Velas y flores naturales",
+            "Decoraciones completas",
+        ],
+        extras: "Globos (+$350), Fotos (+$50), Cena c/vino (+$800)",
+    },
+    {
+        id: 7,
+        title: "Picnic Party",
+        price: "$1,950",
+        category: "Picnic",
+        image: "/images/catalog/picnics/party/party.webp",
+        gallery: [
+            "/images/catalog/picnics/party/party.webp",
+            "/images/catalog/picnics/party/party1.webp",
+            "/images/catalog/picnics/party/party2.webp",
+            "/images/catalog/picnics/party/party3.webp",
+            "/images/catalog/picnics/party/party4.webp",
+            "/images/catalog/picnics/party/party5.webp",
+            "/images/catalog/picnics/party/party6.webp",
+            "/images/catalog/picnics/party/party7.webp",
+        ],
+        description:
+            "Perfecto para fiestas y celebraciones. Ambiente encantador y temático.",
+        includes: [
+            "Mesita de picnic y mantita",
+            "Almohadas decorativas",
+            "Flores naturales y velas",
+            "Vajilla con copas",
+            "Decoración temática",
+        ],
+        tiers: [
+            { label: "2-4 Personas", price: "$1,950" },
+            { label: "5-8 Personas", price: "$2,749" },
+            { label: "9-12 Personas", price: "$4,000" },
+            { label: "13-16 Personas", price: "$4,759" },
+            { label: "17-20 Personas", price: "$5,450" },
+        ],
+    },
+    {
+        id: 8,
+        title: "Picnic Kids",
+        price: "$1,850",
+        category: "Picnic",
+        image: "/images/catalog/picnics/kids/kids.webp",
+        gallery: [
+            "/images/catalog/picnics/kids/kids.webp",
+            "/images/catalog/picnics/kids/kids1.webp",
+            "/images/catalog/picnics/kids/kids2.webp",
+            "/images/catalog/picnics/kids/kids3.webp",
+        ],
+        description:
+            "Personalizado con temática elegida. Ideal para los más pequeños.",
+        includes: [
+            "Mesita de picnic y mantita",
+            "Almohadas decorativas",
+            "Decoración mesa y flores naturales",
+            "Letreritos de reservado",
+            "Vajilla con vasitos",
+        ],
+        tiers: [
+            { label: "2-4 Personas", price: "$1,850" },
+            { label: "5-8 Personas", price: "$2,599" },
+            { label: "9-12 Personas", price: "$3,850" },
+            { label: "13-16 Personas", price: "$4,759" },
+            { label: "17-20 Personas", price: "$5,650" },
+        ],
+        extras: "Extra: Teepee Dion globos ($850).",
+    },
+    {
+        id: 9,
+        title: "Cinema Night",
+        price: "$2,200",
+        category: "Cine",
+        discount: false,
+        image: "/images/catalog/cinema/cinema.webp",
+        gallery: [
+            "/images/catalog/cinema/cinema.webp",
+            "/images/catalog/cinema/cinema1.webp",
+            "/images/catalog/cinema/cinema2.webp",
+            "/images/catalog/cinema/cinema3.webp",
+        ],
+        description:
+            "Disfruta de una película al aire libre o en casa con pantalla gigante.",
+        includes: [
+            "Pantalla gigante inflable",
+            "Sillón inflable (para dos)",
+            "Proyector",
+            "Mesita, luces y decoraciones",
+            "Ambiente de cine privado",
+        ],
+        extras: "Se le puede agregar Teepee VIP con luces (+$900).",
+    },
 ];
 ---
 
 <section class="py-16 md:py-24 px-4 relative">
-    <div class="max-w-7xl mx-auto"> 
+    <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 relative z-10">
-            <p class="text-picnic-gold tracking-[0.2em] uppercase text-xs md:text-sm font-medium">Picnics, Teepees & Cinema gigante</p>
+            <p
+                class="text-picnic-gold tracking-[0.2em] uppercase text-xs md:text-sm font-medium"
+            >
+                Picnics, Teepees & Cinema gigante
+            </p>
             <div class="w-24 h-[1px] bg-picnic-gold mx-auto mt-6"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 relative z-10">
-            {EXPERIENCES.map((item, index) => (
-                <article 
-                    class={`group relative h-[70vh] md:h-[75vh] rounded-2xl overflow-hidden shadow-2xl hover:shadow-picnic-gold/20 transition-all duration-500 cursor-pointer ${item.category === 'Cine' ? 'md:col-span-2 md:w-2/3 md:mx-auto' : ''}`}
-                    onclick={`openExperienceModal(${index})`}
-                >
-                    
-                    <img 
-                        src={item.image} 
-                        alt={item.title} 
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                        onerror="this.src='https://images.unsplash.com/photo-1560035276-146d97a5b3f2?auto=format&fit=crop&w=800'" 
-                        loading="lazy"
-                    />
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 relative z-10"
+        >
+            {
+                EXPERIENCES.map((item, index) => (
+                    <article
+                        class={`group relative h-[70vh] md:h-[75vh] rounded-2xl overflow-hidden shadow-2xl hover:shadow-picnic-gold/20 transition-all duration-500 cursor-pointer ${item.category === "Cine" ? "md:col-span-2 md:w-2/3 md:mx-auto" : ""}`}
+                        onclick={`openExperienceModal(${index})`}
+                    >
+                        <img
+                            src={item.image}
+                            alt={item.title}
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            onerror="this.src='https://images.unsplash.com/photo-1560035276-146d97a5b3f2?auto=format&fit=crop&w=800'"
+                            loading="lazy"
+                        />
 
-                    {item.discount && (
-                        <div class="absolute top-4 right-4 z-30 bg-red-600 text-white text-xs font-extrabold px-3 py-1.5 rounded-sm shadow-xl transform rotate-3 border border-white/20 flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
-                                <path fill-rule="evenodd" d="M4.5 2A2.5 2.5 0 002 4.5v2.879a2.5 2.5 0 00.732 1.767l8.122 8.121a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536L9.146 2.732A2.5 2.5 0 007.38 2H4.5zM5 5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                            </svg>
-                            20% OFF
-                        </div>
-                    )}
+                        {item.discount && (
+                            <div class="absolute top-4 right-4 z-30 bg-red-600 text-white text-xs font-extrabold px-3 py-1.5 rounded-sm shadow-xl transform rotate-3 border border-white/20 flex items-center gap-1">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    class="w-3 h-3"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M4.5 2A2.5 2.5 0 002 4.5v2.879a2.5 2.5 0 00.732 1.767l8.122 8.121a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536L9.146 2.732A2.5 2.5 0 007.38 2H4.5zM5 5a1 1 0 100-2 1 1 0 000 2z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                                20% OFF
+                            </div>
+                        )}
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0F1F38] via-[#0F1F38]/60 to-transparent opacity-90 md:opacity-80 transition-opacity group-hover:opacity-95"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F1F38] via-[#0F1F38]/60 to-transparent opacity-90 md:opacity-80 transition-opacity group-hover:opacity-95" />
 
-                    <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col justify-end h-full">
-                        <div class="mb-4">
-                             <span class={`inline-block text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm backdrop-blur-sm mb-2 ${
-                                item.category === 'Cine' ? 'bg-red-900/90 text-white' : 
-                                item.category === 'Picnic' ? 'bg-orange-300/90 text-picnic-navy' : 
-                                'bg-picnic-gold/90 text-picnic-navy'
-                             }`}>
-                                {item.category}
-                             </span>
-                        </div>
-                       
-                        <div class="flex flex-wrap justify-between items-end mb-4 md:mb-6">
-                            <h3 class="text-3xl md:text-5xl font-serif text-white leading-tight drop-shadow-lg group-hover:text-picnic-gold transition-colors">{item.title}</h3>
-                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col justify-end h-full">
+                            <div class="mb-4">
+                                <span
+                                    class={`inline-block text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm backdrop-blur-sm mb-2 ${
+                                        item.category === "Cine"
+                                            ? "bg-red-900/90 text-white"
+                                            : item.category === "Picnic"
+                                              ? "bg-orange-300/90 text-picnic-navy"
+                                              : "bg-picnic-gold/90 text-picnic-navy"
+                                    }`}
+                                >
+                                    {item.category}
+                                </span>
+                            </div>
 
-                        <p class="text-gray-200 text-sm md:text-base font-light italic mb-6 opacity-90 md:max-w-xl line-clamp-2">{item.description}</p>
+                            <div class="flex flex-wrap justify-between items-end mb-4 md:mb-6">
+                                <h3 class="text-3xl md:text-5xl font-serif text-white leading-tight drop-shadow-lg group-hover:text-picnic-gold transition-colors">
+                                    {item.title}
+                                </h3>
+                            </div>
 
-                        <div class="border-t border-white/20 pt-4 mb-6">
-                            <p class="text-[10px] text-picnic-gold uppercase tracking-widest mb-2 font-semibold">Incluye:</p>
-                            <ul class="space-y-1">
-                                {item.includes.slice(0, 2).map((inc) => (
-                                    <li class="flex items-center text-sm text-gray-100 font-light">
-                                        <span class="mr-2 text-picnic-gold">✦</span> {inc}
+                            <p class="text-gray-200 text-sm md:text-base font-light italic mb-6 opacity-90 md:max-w-xl line-clamp-2">
+                                {item.description}
+                            </p>
+
+                            <div class="border-t border-white/20 pt-4 mb-6">
+                                <p class="text-[10px] text-picnic-gold uppercase tracking-widest mb-2 font-semibold">
+                                    Incluye:
+                                </p>
+                                <ul class="space-y-1">
+                                    {item.includes.slice(0, 2).map((inc) => (
+                                        <li class="flex items-center text-sm text-gray-100 font-light">
+                                            <span class="mr-2 text-picnic-gold">
+                                                ✦
+                                            </span>{" "}
+                                            {inc}
+                                        </li>
+                                    ))}
+                                    <li class="text-xs text-gray-400 pl-4 italic mt-1">
+                                        ... y más detalles
                                     </li>
-                                ))}
-                                <li class="text-xs text-gray-400 pl-4 italic mt-1">... y más detalles</li>
-                            </ul>
-                        </div>
+                                </ul>
+                            </div>
 
-                        <div class="flex flex-col md:flex-row gap-3">
-                            <button 
-                                class="open-modal-btn flex-1 py-3 md:py-4 px-8 text-center bg-transparent border border-picnic-gold text-picnic-gold hover:bg-picnic-gold hover:text-picnic-navy text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm"
-                                data-index={index}
-                            >
-                                Ver Detalles
-                            </button>
-
-                            {item.tiers ? (
-                                <button 
-                                    class="open-modal-btn flex-1 py-3 md:py-4 px-8 text-center bg-picnic-gold/20 border border-picnic-gold text-picnic-gold hover:bg-picnic-gold hover:text-picnic-navy text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm flex items-center justify-center gap-2"
+                            <div class="flex flex-col md:flex-row gap-3">
+                                <button
+                                    class="open-modal-btn flex-1 py-3 md:py-4 px-8 text-center bg-transparent border border-picnic-gold text-picnic-gold hover:bg-picnic-gold hover:text-picnic-navy text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm"
                                     data-index={index}
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                    </svg>
-                                    Reservar {item.price}*
+                                    Ver Detalles
                                 </button>
-                            ) : (
-                                <button 
-                                    onclick={`event.stopPropagation(); addToCart({
+
+                                {item.tiers ? (
+                                    <button
+                                        class="open-modal-btn flex-1 py-3 md:py-4 px-8 text-center bg-picnic-gold/20 border border-picnic-gold text-picnic-gold hover:bg-picnic-gold hover:text-picnic-navy text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm flex items-center justify-center gap-2"
+                                        data-index={index}
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="w-4 h-4"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M12 4.5v15m7.5-7.5h-15"
+                                            />
+                                        </svg>
+                                        Reservar {item.price}*
+                                    </button>
+                                ) : (
+                                    <button
+                                        onclick={`event.stopPropagation(); addToCart({
                                         id: ${item.id},
                                         title: '${item.title.replace(/'/g, "\\'")}',
                                         price: '${item.price}',
@@ -263,137 +363,327 @@ const EXPERIENCES = [
                                         description: '${item.description.replace(/'/g, "\\'")}',
                                         image: '${item.image}'
                                     })`}
-                                    class="flex-1 py-3 md:py-4 px-8 text-center bg-picnic-gold/20 border border-picnic-gold text-picnic-gold hover:bg-picnic-gold hover:text-picnic-navy text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm flex items-center justify-center gap-2"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                    </svg>
-                                    Reservar {item.price}
-                                </button>
-                            )}
+                                        class="flex-1 py-3 md:py-4 px-8 text-center bg-picnic-gold/20 border border-picnic-gold text-picnic-gold hover:bg-picnic-gold hover:text-picnic-navy text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm flex items-center justify-center gap-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="w-4 h-4"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M12 4.5v15m7.5-7.5h-15"
+                                            />
+                                        </svg>
+                                        Reservar {item.price}
+                                    </button>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                </article>
-            ))}
+                    </article>
+                ))
+            }
         </div>
     </div>
-    <div id="experienceModal" class="fixed inset-0 z-[99999] hidden flex items-start justify-center px-4 pt-22  md:pt-25">
-        
-        <div class="absolute inset-0 bg-black/60 md:bg-black/50 backdrop-blur-sm transition-opacity" 
-             onclick="closeExperienceModal()"
-             id="modalBackdrop"></div>
-        
-        <div class="relative bg-[#0F1F38]/80 md:bg-[#0F1F38]/60 backdrop-blur-xl border border-white/20 w-full max-w-5xl h-[80vh] md:h-auto md:max-h-[85vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up"
-             onclick="event.stopPropagation()">
-            
-            <button onclick="closeExperienceModal()" 
-                    class="absolute top-4 right-4 z-50 p-2 bg-black/40 hover:bg-picnic-gold rounded-full text-white hover:text-picnic-navy transition-colors backdrop-blur-md">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <div
+        id="experienceModal"
+        class="fixed inset-0 z-[99999] hidden flex items-start justify-center px-4 pt-22 md:pt-25"
+    >
+        <div
+            class="absolute inset-0 bg-black/60 md:bg-black/50 backdrop-blur-sm transition-opacity"
+            onclick="closeExperienceModal()"
+            id="modalBackdrop"
+        >
+        </div>
+
+        <div
+            class="relative bg-[#0F1F38]/80 md:bg-[#0F1F38]/60 backdrop-blur-xl border border-white/20 w-full max-w-5xl h-[80vh] md:h-auto md:max-h-[85vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up"
+            onclick="event.stopPropagation()"
+        >
+            <button
+                onclick="closeExperienceModal()"
+                class="absolute top-4 right-4 z-50 p-2 bg-black/40 hover:bg-picnic-gold rounded-full text-white hover:text-picnic-navy transition-colors backdrop-blur-md"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
 
-            <div class="flex-1 overflow-y-auto custom-scrollbar flex flex-col md:flex-row">
-                
-                <div class="w-full md:w-5/12 bg-black/20 p-4 md:p-6 flex flex-col shrink-0">
-                    <div class="flex-1 min-h-[250px] md:h-64 overflow-hidden rounded-lg mb-4 relative shadow-inner group bg-black/40">
-                        <img id="modalMainImage" src="" alt="" 
-                             class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in hover:opacity-90" 
-                             onclick="openLightbox()" />
-                        
-                        <div class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm pointer-events-none flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+            <div
+                id="modalScrollContainer"
+                class="flex-1 overflow-y-auto custom-scrollbar flex flex-col md:flex-row"
+            >
+                <div
+                    class="w-full md:w-5/12 bg-black/20 p-4 md:p-6 flex flex-col shrink-0"
+                >
+                    <div
+                        class="flex-1 min-h-[250px] md:h-64 overflow-hidden rounded-lg mb-4 relative shadow-inner group bg-black/40"
+                    >
+                        <img
+                            id="modalMainImage"
+                            src=""
+                            alt=""
+                            class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in hover:opacity-90"
+                            onclick="openLightbox()"
+                        />
+
+                        <div
+                            class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm pointer-events-none flex items-center gap-1"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-3 h-3 inline"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+                                ></path>
                             </svg>
                             Ver completa
                         </div>
 
-                        <button onclick="event.stopPropagation(); changeModalImage(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-picnic-gold/80 text-white hover:text-picnic-navy p-2 rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                        <button
+                            onclick="event.stopPropagation(); changeModalImage(-1)"
+                            class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-picnic-gold/80 text-white hover:text-picnic-navy p-2 rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-4 h-4"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 19.5L8.25 12l7.5-7.5"></path></svg
+                            >
                         </button>
-                        <button onclick="event.stopPropagation(); changeModalImage(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-picnic-gold/80 text-white hover:text-picnic-navy p-2 rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                        <button
+                            onclick="event.stopPropagation(); changeModalImage(1)"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-picnic-gold/80 text-white hover:text-picnic-navy p-2 rounded-full backdrop-blur-sm transition-all md:opacity-0 md:group-hover:opacity-100"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-4 h-4"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg
+                            >
                         </button>
                     </div>
-                    
-                    <div class="flex gap-2 overflow-x-auto pb-2 custom-scrollbar snap-x shrink-0" id="modalThumbnails"></div>
+
+                    <div
+                        class="flex gap-2 overflow-x-auto pb-2 custom-scrollbar snap-x shrink-0"
+                        id="modalThumbnails"
+                    >
+                    </div>
                 </div>
 
-                <div class="w-full md:w-7/12 p-6 md:p-8 flex flex-col text-left">
-                    <span id="modalCategory" class="text-picnic-gold text-xs font-bold uppercase tracking-widest mb-2">Categoría</span>
-                    <h2 id="modalTitle" class="text-3xl md:text-4xl font-serif text-white mb-2 drop-shadow-md">Título</h2>
-                    <p id="modalPrice" class="text-2xl font-medium text-picnic-gold mb-6 drop-shadow-md">$0.00</p>
-                    
-                    <p id="modalDescription" class="text-gray-100 font-light italic mb-6 text-base border-l-2 border-picnic-gold pl-4 bg-white/5 p-3 rounded-r-lg">Descripción</p>
+                <div
+                    class="w-full md:w-7/12 p-6 md:p-8 flex flex-col text-left"
+                >
+                    <span
+                        id="modalCategory"
+                        class="text-picnic-gold text-xs font-bold uppercase tracking-widest mb-2"
+                        >Categoría</span
+                    >
+                    <h2
+                        id="modalTitle"
+                        class="text-3xl md:text-4xl font-serif text-white mb-2 drop-shadow-md"
+                    >
+                        Título
+                    </h2>
+                    <p
+                        id="modalPrice"
+                        class="text-2xl font-medium text-picnic-gold mb-6 drop-shadow-md"
+                    >
+                        $0.00
+                    </p>
 
-                    <div id="modalTierContainer" class="hidden mb-6 bg-white/5 p-4 rounded-lg border border-white/10">
-                        <p class="text-[10px] text-picnic-gold uppercase tracking-widest mb-3 font-bold">Selecciona cantidad de personas:</p>
-                        <div id="modalTierOptions" class="flex flex-wrap gap-2"></div>
+                    <p
+                        id="modalDescription"
+                        class="text-gray-100 font-light italic mb-6 text-base border-l-2 border-picnic-gold pl-4 bg-white/5 p-3 rounded-r-lg"
+                    >
+                        Descripción
+                    </p>
+
+                    <div
+                        id="modalTierContainer"
+                        class="hidden mb-6 bg-white/5 p-4 rounded-lg border border-white/10"
+                    >
+                        <p
+                            class="text-[10px] text-picnic-gold uppercase tracking-widest mb-3 font-bold"
+                        >
+                            Selecciona cantidad de personas:
+                        </p>
+                        <div id="modalTierOptions" class="flex flex-wrap gap-2">
+                        </div>
                     </div>
 
                     <div class="mb-6">
-                        <div class="bg-black/20 p-5 rounded-lg mb-6 border border-white/5">
-                            <h4 class="text-xs text-white uppercase tracking-widest font-bold mb-3 border-b border-white/10 pb-2">¿Qué incluye?</h4>
-                            <ul id="modalIncludes" class="space-y-2 text-gray-200"></ul>
+                        <div
+                            class="bg-black/20 p-5 rounded-lg mb-6 border border-white/5"
+                        >
+                            <h4
+                                class="text-xs text-white uppercase tracking-widest font-bold mb-3 border-b border-white/10 pb-2"
+                            >
+                                ¿Qué incluye?
+                            </h4>
+                            <ul
+                                id="modalIncludes"
+                                class="space-y-2 text-gray-200"
+                            >
+                            </ul>
                         </div>
-                        
+
                         <div id="modalExtrasContainer" class="hidden">
-                            <p class="text-[10px] text-gray-300 uppercase tracking-widest mb-1">Extras Disponibles:</p>
-                            <p id="modalExtras" class="text-xs text-gray-200"></p>
+                            <p
+                                class="text-[10px] text-gray-300 uppercase tracking-widest mb-1"
+                            >
+                                Extras Disponibles:
+                            </p>
+                            <p id="modalExtras" class="text-xs text-gray-200">
+                            </p>
                         </div>
                     </div>
 
                     <div class="mt-auto pt-6 border-t border-white/10">
-                        <button 
+                        <button
                             onclick="addToCartFromModal()"
                             class="w-full py-4 text-center bg-picnic-gold/90 hover:bg-white text-picnic-navy font-bold uppercase tracking-widest rounded-sm transition-all shadow-lg hover:shadow-picnic-gold/50 text-sm backdrop-blur-sm flex items-center justify-center gap-2 group"
                             id="modalAddToCartBtn"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 group-hover:scale-110 transition-transform">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-5 h-5 group-hover:scale-110 transition-transform"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 4.5v15m7.5-7.5h-15"></path>
                             </svg>
                             Agregar a mi reserva
                         </button>
-                        <p id="addFeedback" class="text-center text-green-400 text-[10px] mt-2 opacity-0 transition-opacity font-bold tracking-wider">¡AGREGADO A TU RESERVA!</p>
+                        <p
+                            id="addFeedback"
+                            class="text-center text-green-400 text-[10px] mt-2 opacity-0 transition-opacity font-bold tracking-wider"
+                        >
+                            ¡AGREGADO A TU RESERVA!
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="lightboxModal" 
-         class="fixed inset-0 z-[999999] bg-gray-900/90 backdrop-blur-xl hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300" 
-         onclick="closeLightbox()">
-        
-        <button class="absolute top-4 right-4 text-white hover:text-picnic-gold hover:bg-white/10 rounded-full z-50 p-2 transition-all" onclick="closeLightbox()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <div
+        id="lightboxModal"
+        class="fixed inset-0 z-[999999] bg-gray-900/90 backdrop-blur-xl hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300"
+        onclick="closeLightbox()"
+    >
+        <button
+            class="absolute top-4 right-4 text-white hover:text-picnic-gold hover:bg-white/10 rounded-full z-50 p-2 transition-all"
+            onclick="closeLightbox()"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-8 h-8"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
 
-        <div class="w-full h-full flex items-center justify-center relative md:items-start md:pt-24"
-             ontouchstart="touchStart(event)"
-             ontouchend="touchEnd(event)">
-             
-             <button onclick="event.stopPropagation(); changeModalImage(-1)" class="absolute left-2 md:left-8 text-white/50 hover:text-white hover:scale-110 transition-all p-4 z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10 md:w-12 md:h-12 drop-shadow-lg"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-             </button>
+        <div
+            class="w-full h-full flex items-center justify-center relative md:items-start md:pt-24"
+            ontouchstart="touchStart(event)"
+            ontouchend="touchEnd(event)"
+        >
+            <button
+                onclick="event.stopPropagation(); changeModalImage(-1)"
+                class="absolute left-2 md:left-8 text-white/50 hover:text-white hover:scale-110 transition-all p-4 z-10"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="w-10 h-10 md:w-12 md:h-12 drop-shadow-lg"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 19.5L8.25 12l7.5-7.5"></path></svg
+                >
+            </button>
 
-             <img id="lightboxImage" src="" 
-                  onclick="event.stopPropagation()"
-                  class="max-h-[85vh] max-w-[95vw] object-contain shadow-2xl transition-transform duration-300 rounded-sm" />
+            <img
+                id="lightboxImage"
+                src=""
+                onclick="event.stopPropagation()"
+                class="max-h-[85vh] max-w-[95vw] object-contain shadow-2xl transition-transform duration-300 rounded-sm"
+            />
 
-             <button onclick="event.stopPropagation(); changeModalImage(1)" class="absolute right-2 md:right-8 text-white/50 hover:text-white hover:scale-110 transition-all p-4 z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10 md:w-12 md:h-12 drop-shadow-lg"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-             </button>
+            <button
+                onclick="event.stopPropagation(); changeModalImage(1)"
+                class="absolute right-2 md:right-8 text-white/50 hover:text-white hover:scale-110 transition-all p-4 z-10"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="w-10 h-10 md:w-12 md:h-12 drop-shadow-lg"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg
+                >
+            </button>
         </div>
 
-        <div class="absolute bottom-8 text-white/90 text-sm tracking-widest font-light bg-black/40 px-4 py-1 rounded-full backdrop-blur border border-white/10 pointer-events-none">
+        <div
+            class="absolute bottom-8 text-white/90 text-sm tracking-widest font-light bg-black/40 px-4 py-1 rounded-full backdrop-blur border border-white/10 pointer-events-none"
+        >
             <span id="lightboxCounter">1 / 1</span>
         </div>
     </div>
-
-  
 </section>
 
 <script define:vars={{ EXPERIENCES }}>
@@ -401,28 +691,28 @@ const EXPERIENCES = [
     let currentModalItem = null;
     let currentSelectedTierPrice = null;
     let currentSelectedTierLabel = null;
-    
+
     // Variables de Galería
     let currentGallery = [];
     let currentImageIndex = 0;
     let isLightboxOpen = false;
 
     // --- LOGICA DE SWIPE PARA CELULAR ---
-let touchStartX = 0;
+    let touchStartX = 0;
     let touchEndX = 0;
     let touchStartY = 0; // Nuevo: Para detectar altura
     let touchEndY = 0;
 
-    window.touchStart = function(e) {
+    window.touchStart = function (e) {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY; // Guardamos donde empieza el dedo
-    }
+    };
 
-    window.touchEnd = function(e) {
+    window.touchEnd = function (e) {
         touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;   // Guardamos donde termina
+        touchEndY = e.changedTouches[0].screenY; // Guardamos donde termina
         handleSwipe();
-    }
+    };
 
     function handleSwipe() {
         const diffX = touchStartX - touchEndX;
@@ -441,174 +731,202 @@ let touchStartX = 0;
         }
     }
     // ------------------------------------
-    
+
     function openExperienceModal(index) {
         const data = window.experiencesData[index];
         currentModalItem = data;
-        
-        currentSelectedTierPrice = data.price;
-        currentSelectedTierLabel = ""; 
 
-        const modal = document.getElementById('experienceModal');
-        document.getElementById('modalCategory').innerText = data.category;
-        document.getElementById('modalTitle').innerText = data.title;
-        document.getElementById('modalPrice').innerText = data.price;
-        document.getElementById('modalDescription').innerText = data.description;
-        
+        currentSelectedTierPrice = data.price;
+        currentSelectedTierLabel = "";
+
+        const modal = document.getElementById("experienceModal");
+        document.getElementById("modalCategory").innerText = data.category;
+        document.getElementById("modalTitle").innerText = data.title;
+        document.getElementById("modalPrice").innerText = data.price;
+        document.getElementById("modalDescription").innerText =
+            data.description;
+
         // Tiers Logic
-        const tierContainer = document.getElementById('modalTierContainer');
-        const tierOptions = document.getElementById('modalTierOptions');
-        
+        const tierContainer = document.getElementById("modalTierContainer");
+        const tierOptions = document.getElementById("modalTierOptions");
+
         if (data.tiers && data.tiers.length > 0) {
-            tierContainer.classList.remove('hidden');
-            tierOptions.innerHTML = '';
+            tierContainer.classList.remove("hidden");
+            tierOptions.innerHTML = "";
             currentSelectedTierPrice = data.tiers[0].price;
             currentSelectedTierLabel = ` (${data.tiers[0].label})`;
-            document.getElementById('modalPrice').innerText = currentSelectedTierPrice;
+            document.getElementById("modalPrice").innerText =
+                currentSelectedTierPrice;
 
             data.tiers.forEach((tier, idx) => {
-                const btn = document.createElement('button');
-                const baseClass = "px-4 py-2 text-xs border rounded transition-all flex flex-col items-center justify-center min-w-[80px]";
-                const activeClass = "bg-picnic-gold text-picnic-navy border-picnic-gold font-bold shadow-md scale-105";
-                const inactiveClass = "bg-transparent text-white border-white/30 hover:border-picnic-gold hover:bg-white/5";
-                
+                const btn = document.createElement("button");
+                const baseClass =
+                    "px-4 py-2 text-xs border rounded transition-all flex flex-col items-center justify-center min-w-[80px]";
+                const activeClass =
+                    "bg-picnic-gold text-picnic-navy border-picnic-gold font-bold shadow-md scale-105";
+                const inactiveClass =
+                    "bg-transparent text-white border-white/30 hover:border-picnic-gold hover:bg-white/5";
+
                 btn.className = `${baseClass} ${idx === 0 ? activeClass : inactiveClass}`;
                 btn.innerHTML = `<span class="uppercase tracking-wide">${tier.label}</span><span class="mt-1 text-[10px] opacity-80">${tier.price}</span>`;
-                
+
                 btn.onclick = () => {
-                    Array.from(tierOptions.children).forEach(b => b.className = `${baseClass} ${inactiveClass}`);
+                    Array.from(tierOptions.children).forEach(
+                        (b) => (b.className = `${baseClass} ${inactiveClass}`),
+                    );
                     btn.className = `${baseClass} ${activeClass}`;
                     currentSelectedTierPrice = tier.price;
                     currentSelectedTierLabel = ` (${tier.label})`;
-                    document.getElementById('modalPrice').innerText = currentSelectedTierPrice;
+                    document.getElementById("modalPrice").innerText =
+                        currentSelectedTierPrice;
                     updateAddButtonText();
                 };
                 tierOptions.appendChild(btn);
             });
         } else {
-            tierContainer.classList.add('hidden');
+            tierContainer.classList.add("hidden");
         }
 
         // Includes Logic
-        const includesList = document.getElementById('modalIncludes');
-        includesList.innerHTML = ''; 
+        const includesList = document.getElementById("modalIncludes");
+        includesList.innerHTML = "";
         const fragment = document.createDocumentFragment();
-        data.includes.forEach(item => {
-            const li = document.createElement('li');
-            li.className = 'flex items-start text-sm text-gray-200 font-light';
+        data.includes.forEach((item) => {
+            const li = document.createElement("li");
+            li.className = "flex items-start text-sm text-gray-200 font-light";
             li.innerHTML = `<span class="mr-3 text-picnic-gold text-lg">✦</span>${item}`;
             fragment.appendChild(li);
         });
         includesList.appendChild(fragment);
-        
-        if(data.extras) {
-            document.getElementById('modalExtrasContainer').classList.remove('hidden');
-            document.getElementById('modalExtras').innerText = data.extras;
+
+        if (data.extras) {
+            document
+                .getElementById("modalExtrasContainer")
+                .classList.remove("hidden");
+            document.getElementById("modalExtras").innerText = data.extras;
         } else {
-            document.getElementById('modalExtrasContainer').classList.add('hidden');
+            document
+                .getElementById("modalExtrasContainer")
+                .classList.add("hidden");
         }
-        
+
         // Galería Setup
-        const mainImg = document.getElementById('modalMainImage');
-        const thumbsContainer = document.getElementById('modalThumbnails');
-        
-        currentGallery = data.gallery && data.gallery.length > 0 ? data.gallery : [data.image];
+        const mainImg = document.getElementById("modalMainImage");
+        const thumbsContainer = document.getElementById("modalThumbnails");
+
+        currentGallery =
+            data.gallery && data.gallery.length > 0
+                ? data.gallery
+                : [data.image];
         currentImageIndex = 0;
-        
+
         mainImg.src = currentGallery[0];
-        
-        thumbsContainer.innerHTML = '';
+
+        thumbsContainer.innerHTML = "";
         currentGallery.forEach((imgSrc, idx) => {
-            const thumb = document.createElement('img');
+            const thumb = document.createElement("img");
             thumb.src = imgSrc;
-            thumb.className = `h-16 w-16 md:h-20 md:w-20 object-cover rounded-md cursor-pointer border-2 transition-all flex-shrink-0 snap-start ${idx === 0 ? 'border-picnic-gold opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`;
+            thumb.className = `h-16 w-16 md:h-20 md:w-20 object-cover rounded-md cursor-pointer border-2 transition-all flex-shrink-0 snap-start ${idx === 0 ? "border-picnic-gold opacity-100" : "border-transparent opacity-60 hover:opacity-100"}`;
             thumb.onclick = () => updateGalleryView(idx);
             thumbsContainer.appendChild(thumb);
         });
-        
-        updateAddButtonText();
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; 
-    }
 
-    // --- FUNCIONES LIGHTBOX ---
-    window.openLightbox = function() {
-        const lightbox = document.getElementById('lightboxModal');
-        const lightboxImg = document.getElementById('lightboxImage');
-        
-        isLightboxOpen = true;
-        lightboxImg.src = currentGallery[currentImageIndex];
-        updateLightboxCounter();
-        
-        lightbox.classList.remove('hidden');
-        lightbox.style.display = 'flex'; // Asegurar que sea flex
-        
+        updateAddButtonText();
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+
+        // 2. Esperamos poquitito para reiniciar el scroll (Truco para que funcione)
         setTimeout(() => {
-            lightbox.classList.remove('opacity-0');
-            lightbox.classList.add('opacity-100');
+            const scrollContainer = document.getElementById(
+                "modalScrollContainer",
+            );
+            if (scrollContainer) scrollContainer.scrollTop = 0;
         }, 10);
     }
 
-    window.closeLightbox = function() {
-        const lightbox = document.getElementById('lightboxModal');
-        isLightboxOpen = false;
-        lightbox.classList.remove('opacity-100');
-        lightbox.classList.add('opacity-0');
+    // --- FUNCIONES LIGHTBOX ---
+    window.openLightbox = function () {
+        const lightbox = document.getElementById("lightboxModal");
+        const lightboxImg = document.getElementById("lightboxImage");
+
+        isLightboxOpen = true;
+        lightboxImg.src = currentGallery[currentImageIndex];
+        updateLightboxCounter();
+
+        lightbox.classList.remove("hidden");
+        lightbox.style.display = "flex"; // Asegurar que sea flex
+
         setTimeout(() => {
-            lightbox.classList.add('hidden');
-            lightbox.style.display = 'none';
+            lightbox.classList.remove("opacity-0");
+            lightbox.classList.add("opacity-100");
+        }, 10);
+    };
+
+    window.closeLightbox = function () {
+        const lightbox = document.getElementById("lightboxModal");
+        isLightboxOpen = false;
+        lightbox.classList.remove("opacity-100");
+        lightbox.classList.add("opacity-0");
+        setTimeout(() => {
+            lightbox.classList.add("hidden");
+            lightbox.style.display = "none";
         }, 300);
-    }
+    };
 
     function updateLightboxCounter() {
-        document.getElementById('lightboxCounter').innerText = `${currentImageIndex + 1} / ${currentGallery.length}`;
+        document.getElementById("lightboxCounter").innerText =
+            `${currentImageIndex + 1} / ${currentGallery.length}`;
     }
     // --------------------------------
 
     function updateGalleryView(newIndex) {
-        const mainImg = document.getElementById('modalMainImage');
-        const lightboxImg = document.getElementById('lightboxImage');
-        const thumbsContainer = document.getElementById('modalThumbnails');
-        
+        const mainImg = document.getElementById("modalMainImage");
+        const lightboxImg = document.getElementById("lightboxImage");
+        const thumbsContainer = document.getElementById("modalThumbnails");
+
         currentImageIndex = newIndex;
-        
+
         // Animación suave
-        mainImg.style.opacity = '0.5';
-        if(isLightboxOpen) lightboxImg.style.opacity = '0.5';
+        mainImg.style.opacity = "0.5";
+        if (isLightboxOpen) lightboxImg.style.opacity = "0.5";
 
         setTimeout(() => {
             mainImg.src = currentGallery[currentImageIndex];
-            if(isLightboxOpen) {
+            if (isLightboxOpen) {
                 lightboxImg.src = currentGallery[currentImageIndex];
                 updateLightboxCounter();
             }
-            
-            mainImg.style.opacity = '1';
-            if(isLightboxOpen) lightboxImg.style.opacity = '1';
+
+            mainImg.style.opacity = "1";
+            if (isLightboxOpen) lightboxImg.style.opacity = "1";
         }, 150);
 
         // Thumbnails
         Array.from(thumbsContainer.children).forEach((t, idx) => {
-            if(idx === currentImageIndex) {
-                t.classList.remove('border-transparent', 'opacity-60');
-                t.classList.add('border-picnic-gold', 'opacity-100');
-                t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            if (idx === currentImageIndex) {
+                t.classList.remove("border-transparent", "opacity-60");
+                t.classList.add("border-picnic-gold", "opacity-100");
+                t.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "center",
+                });
             } else {
-                t.classList.add('border-transparent', 'opacity-60');
-                t.classList.remove('border-picnic-gold', 'opacity-100');
+                t.classList.add("border-transparent", "opacity-60");
+                t.classList.remove("border-picnic-gold", "opacity-100");
             }
         });
     }
 
-    window.changeModalImage = function(direction) {
+    window.changeModalImage = function (direction) {
         let newIndex = currentImageIndex + direction;
         if (newIndex < 0) newIndex = currentGallery.length - 1;
         if (newIndex >= currentGallery.length) newIndex = 0;
         updateGalleryView(newIndex);
-    }
+    };
 
     function updateAddButtonText() {
-        const addToCartBtn = document.getElementById('modalAddToCartBtn');
+        const addToCartBtn = document.getElementById("modalAddToCartBtn");
         if (addToCartBtn) {
             addToCartBtn.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -618,47 +936,47 @@ let touchStartX = 0;
             `;
         }
     }
-    
+
     function closeExperienceModal() {
-        document.getElementById('experienceModal').classList.add('hidden');
-        document.body.style.overflow = 'auto'; 
+        document.getElementById("experienceModal").classList.add("hidden");
+        document.body.style.overflow = "auto";
         currentModalItem = null;
-        setTimeout(() => { document.getElementById('modalMainImage').src = ''; }, 300);
     }
-    
+
     function addToCartFromModal() {
         if (!currentModalItem) return;
-        const finalTitle = currentModalItem.title + (currentSelectedTierLabel || "");
+        const finalTitle =
+            currentModalItem.title + (currentSelectedTierLabel || "");
 
-        if (typeof window.addToCart === 'function') {
+        if (typeof window.addToCart === "function") {
             window.addToCart({
-                id: currentModalItem.id, 
+                id: currentModalItem.id,
                 title: finalTitle,
                 price: currentSelectedTierPrice,
                 category: currentModalItem.category,
                 description: currentModalItem.description,
-                image: currentModalItem.image
+                image: currentModalItem.image,
             });
-            
-            const feedback = document.getElementById('addFeedback');
-            if(feedback) {
-                feedback.classList.remove('opacity-0');
-                setTimeout(() => feedback.classList.add('opacity-0'), 2000);
+
+            const feedback = document.getElementById("addFeedback");
+            if (feedback) {
+                feedback.classList.remove("opacity-0");
+                setTimeout(() => feedback.classList.add("opacity-0"), 2000);
             }
         }
     }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('.open-modal-btn');
-        buttons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".open-modal-btn");
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
                 e.stopPropagation();
-                const index = btn.getAttribute('data-index');
+                const index = btn.getAttribute("data-index");
                 openExperienceModal(index);
             });
         });
     });
-    
+
     window.closeExperienceModal = closeExperienceModal;
     window.addToCartFromModal = addToCartFromModal;
     window.openExperienceModal = openExperienceModal; // <--- ¡ESTA LÍNEA ERA LA CLAVE!
